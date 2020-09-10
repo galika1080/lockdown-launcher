@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appdraw_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".MainActivity">
+
+  <FrameLayout
+      android:id="@+id/appdraw_frame"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clickable="false"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="TextView"
+          app:layout_constraintBottom_toTopOf="@+id/gridview"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <GridView
+          android:id="@+id/gridview"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:clickable="false"
+          android:gravity="center"
+          android:horizontalSpacing="20dp"
+          android:numColumns="5"
+          android:verticalSpacing="30dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView">
+
+      </GridView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LockedMessageDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDimBackground"
+        android:clickable="true"
+        android:contextClickable="false"
+        android:focusable="true"
+        android:visibility="gone">
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.47000003"
+          app:srcCompat="@drawable/ic_baseline_lock_24" />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="This page is locked. Request an unlock to access it."
+          android:textColor="#FFFFFF"
+          app:layout_constraintBottom_toTopOf="@+id/button"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+      <Button
+          android:id="@+id/button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:onClick="goToSettings"
+          android:text="Request unlock"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

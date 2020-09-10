@@ -1,0 +1,25 @@
+<resources>
+    <string-array name="stringNaturalsToSix">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="stringPositivesToSix">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="lockdown_options">
+        <item>Delay</item>
+        <item>Password</item>
+    </string-array>
+</resources>

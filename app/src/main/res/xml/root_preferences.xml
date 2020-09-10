@@ -1,0 +1,100 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Distraction prevention">
+
+        <Preference
+            android:id="@+id/lockdown"
+            app:icon="@drawable/ic_locked"
+            app:key="lockdown"
+            app:summary="Lock parts of the launcher to prevent accessing distracting apps"
+            app:title="Lockdown" />
+        <Preference
+            android:id="@+id/unlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="unlock"
+            app:icon="@drawable/ic_unlocked"
+            app:key="unlock"
+            app:summary="Initiate a request to unlock the launcher"
+            app:title="Request unlock" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Lockdown preferences">
+
+        <DropDownPreference
+            android:id="@+id/unlock_method"
+            android:entries="@array/lockdown_options"
+            android:entryValues="@array/lockdown_options"
+            android:key="unlock_mode"
+            android:summary="Choose how to unlock the app drawer"
+            android:title="Unlock method"
+            app:icon="@drawable/ic_lock_settings"
+            app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference
+            android:id="@+id/delay_time"
+            android:key="delay_duration"
+            android:max="30"
+            android:defaultValue="1"
+            android:summary="Minutes between requesting and completing an unlock"
+            android:title="Delay duration"
+            app:icon="@drawable/ic_time"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true" />
+        <Preference
+            android:icon="@drawable/ic_password"
+            android:key="password"
+            android:summary="Used for unlocking the launcher"
+            android:title="Set password" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Layout and appearance">
+        <DropDownPreference
+            android:id="@+id/page_number"
+            android:entries="@array/stringNaturalsToSix"
+            android:entryValues="@array/stringNaturalsToSix"
+            android:key="num_pages"
+            android:defaultValue="1"
+            android:summary="Choose how many pages to show on the home screen"
+            android:title="Number of pages"
+            app:icon="@drawable/ic_page"
+            app:useSimpleSummaryProvider="true" />
+        <DropDownPreference
+            android:id="@+id/folder_number"
+            android:entries="@array/stringNaturalsToSix"
+            android:entryValues="@array/stringNaturalsToSix"
+            android:defaultValue="4"
+            android:key="num_cats"
+            android:summary="Choose how many folders to show on each page"
+            android:title="Number of folders (per page)"
+            app:icon="@drawable/ic_folder"
+            app:useSimpleSummaryProvider="true" />
+        <DropDownPreference
+            android:id="@+id/locked_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/stringPositivesToSix"
+            android:entryValues="@array/stringPositivesToSix"
+            android:defaultValue="0"
+            android:key="num_locked"
+            android:summary="Choose how many pages, starting from the last one, get locked"
+            android:title="Number of lockable pages"
+            app:icon="@drawable/ic_locked"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            android:id="@+id/use_darktext"
+            app:icon="@drawable/ic_lightdark"
+            app:key="dark_text"
+            app:title="Use dark text color" />
+        <SwitchPreferenceCompat
+            android:id="@+id/show_add_icons"
+            app:icon="@drawable/ic_baseline_add_circle_outline_38"
+            app:key="show_add_icons"
+            app:defaultValue="true"
+            app:title="Show add buttons" />
+        <Preference
+            android:key="wallpaper"
+            android:title="Set wallpaper"
+            app:icon="@drawable/ic_baseline_wallpaper_24" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
